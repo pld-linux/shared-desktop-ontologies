@@ -20,10 +20,10 @@ Shared desktop ontologies.
 #%description -l pl.UTF-8
 
 %package devel
-Summary:        Cmake files for shared-desktop-ontologies
-Summary(pl.UTF-8):      Pliki cmake dla shared-desktop-ontologies
-Group:          Development/Libraries
-Requires:      %{name} = %{version}-%{release}
+Summary:	Cmake files for shared-desktop-ontologies
+Summary(pl.UTF-8):	Pliki cmake dla shared-desktop-ontologies
+Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Cmake files for shared-desktop-ontologies.
@@ -40,6 +40,8 @@ cd build
 %cmake .. \
 	-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
+	-DCMAKE_CXX_COMPILER_WORKS=1 \
+	-DCMAKE_CXX_COMPILER="%{__cc}" \
 %if "%{_lib}" == "lib64"
 	-DLIB_SUFFIX=64
 %endif
