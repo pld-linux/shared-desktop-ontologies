@@ -6,7 +6,7 @@ Version:	0.5
 Release:	1
 License:	GPL
 Group:		X11/Libraries
-Source0:	http://dl.sourceforge.net/project/oscaf/shared-desktop-ontologies/%{version}/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/project/oscaf/shared-desktop-ontologies/%{version}/%{name}-%{version}.tar.bz2/download
 # Source0-md5:	067ec9023c4a48e0d53fb15484d78971
 URL:		http://sourceforge.net/apps/trac/oscaf/
 # leave only required ones
