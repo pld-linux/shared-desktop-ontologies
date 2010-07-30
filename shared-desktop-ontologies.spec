@@ -3,11 +3,12 @@ Summary:	Shared Desktop Ontologies
 Summary(pl.UTF-8):	Shared Desktop Ontologies
 Name:		shared-desktop-ontologies
 Version:	0.5
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Libraries
 Source0:	https://sourceforge.net/projects/oscaf/files/shared-desktop-ontologies/%{version}/%{name}-%{version}.tar.bz2/download#/%{name}-%{version}.tar.bz2
 # Source0-md5:	067ec9023c4a48e0d53fb15484d78971
+Patch0:		%{name}-pc.patch
 URL:		http://sourceforge.net/apps/trac/oscaf/
 # leave only required ones
 BuildRequires:	cmake >= 2.8.0
@@ -33,6 +34,7 @@ Pliki cmake dla shared-desktop-ontologies.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 install -d build
