@@ -2,12 +2,13 @@
 Summary:	Shared Desktop Ontologies
 Summary(pl.UTF-8):	Shared Desktop Ontologies
 Name:		shared-desktop-ontologies
-Version:	0.5
-Release:	2
+%define	mver	0.6
+Version:	%{mver}.0
+Release:	1
 License:	GPL
 Group:		X11/Libraries
-Source0:	https://sourceforge.net/projects/oscaf/files/shared-desktop-ontologies/%{version}/%{name}-%{version}.tar.bz2/download#/%{name}-%{version}.tar.bz2
-# Source0-md5:	067ec9023c4a48e0d53fb15484d78971
+Source0:	https://sourceforge.net/projects/oscaf/files/shared-desktop-ontologies/%{mver}/%{name}-%{version}.tar.bz2/download#/%{name}-%{version}.tar.bz2
+# Source0-md5:	2651122ac27de95e91973ed6b88ccf94
 Patch0:		%{name}-pc.patch
 URL:		http://sourceforge.net/apps/trac/oscaf/
 # leave only required ones
