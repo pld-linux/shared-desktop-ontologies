@@ -2,14 +2,13 @@
 Summary:	Shared Desktop Ontologies
 Summary(pl.UTF-8):	Shared Desktop Ontologies
 Name:		shared-desktop-ontologies
-%define	mver	0.7
-Version:	%{mver}.1
+%define	mver	0.8
+Version:	%{mver}.0
 Release:	1
 License:	GPL
 Group:		X11/Libraries
 Source0:	https://sourceforge.net/projects/oscaf/files/shared-desktop-ontologies/%{mver}/%{name}-%{version}.tar.bz2/download#/%{name}-%{version}.tar.bz2
-# Source0-md5:	2684924bf92d9fee476f1ba03a32add4
-Patch0:		%{name}-pc.patch
+# Source0-md5:	3abbd4ddc683aaa0504ed8499b57285e
 URL:		http://sourceforge.net/apps/trac/oscaf/
 # leave only required ones
 BuildRequires:	cmake >= 2.8.0
@@ -35,7 +34,6 @@ Pliki cmake dla shared-desktop-ontologies.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 install -d build
