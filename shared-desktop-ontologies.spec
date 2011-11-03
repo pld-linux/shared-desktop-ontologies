@@ -1,36 +1,42 @@
-
 Summary:	Shared Desktop Ontologies
-Summary(pl.UTF-8):	Shared Desktop Ontologies
+Summary(pl.UTF-8):	Ontologia dla aplikacji desktopowych
 Name:		shared-desktop-ontologies
-%define	mver	0.8
-Version:	%{mver}.0
+Version:	0.8.0
 Release:	1
-License:	GPL
+License:	BSD or CC-BY-SA v3.0, CC v3.0, w3c (see LICENSE.README)
 Group:		X11/Libraries
-Source0:	https://sourceforge.net/projects/oscaf/files/shared-desktop-ontologies/%{mver}/%{name}-%{version}.tar.bz2/download#/%{name}-%{version}.tar.bz2
+Source0:	http://downloads.sourceforge.net/oscaf/%{name}-%{version}.tar.bz2
 # Source0-md5:	3abbd4ddc683aaa0504ed8499b57285e
 URL:		http://sourceforge.net/apps/trac/oscaf/
 # leave only required ones
 BuildRequires:	cmake >= 2.8.0
-BuildRequires:	rpmbuild(macros) >= 1.293
+BuildRequires:	rpmbuild(macros) >= 1.603
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Shared desktop ontologies.
+The shared-desktop-ontologies package brings the semantic web to the
+desktop in terms of vocabulary. It contains the well known core
+ontologies such as RDF and RDFS as well as the Nepomuk ontologies
+which are used by projects like KDE or Strigi.
 
-#%description -l pl.UTF-8
+%description -l pl.UTF-8
+Pakiet shared-desktop-ontologies dostarcza aplikacjom desktopowym sieć
+semantyczną w sensie słownictwa. Zawiera dobrze znaną ontologię, taką
+jak RDF i RDFS, a także ontologię z Nepomuka, używaną przez projekty
+takie jak KDE i Strigi.
 
 %package devel
-Summary:	Cmake files for shared-desktop-ontologies
-Summary(pl.UTF-8):	Pliki cmake dla shared-desktop-ontologies
+Summary:	Development files for shared-desktop-ontologies
+Summary(pl.UTF-8):	Pliki programistyczne dla shared-desktop-ontologies
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
-Cmake files for shared-desktop-ontologies.
+Development (cmake and pkgconfig) files for shared-desktop-ontologies.
 
 %description devel -l pl.UTF-8
-Pliki cmake dla shared-desktop-ontologies.
+Pliki programistyczne (dla cmake i pkg-configa) dla pakietu
+shared-desktop-ontologies.
 
 %prep
 %setup -q
@@ -39,8 +45,6 @@ Pliki cmake dla shared-desktop-ontologies.
 install -d build
 cd build
 %cmake .. \
-	-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
-	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
 	-DCMAKE_CXX_COMPILER_WORKS=1 \
 	-DCMAKE_CXX_COMPILER="%{__cc}" \
 %if "%{_lib}" == "lib64"
@@ -60,9 +64,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS ChangeLog LICENSE.{BSD,CC-BY,DCMI,README,w3c}  README
 %{_datadir}/ontology
 
 %files devel
 %defattr(644,root,root,755)
-%{_datadir}/pkgconfig/shared-desktop-ontologies.pc
+%{_npkgconfigdir}/shared-desktop-ontologies.pc
 %{_datadir}/cmake/SharedDesktopOntologies
