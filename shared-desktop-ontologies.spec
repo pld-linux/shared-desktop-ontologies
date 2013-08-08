@@ -1,12 +1,12 @@
 Summary:	Shared Desktop Ontologies
 Summary(pl.UTF-8):	Ontologia dla aplikacji desktopowych
 Name:		shared-desktop-ontologies
-Version:	0.10.0
+Version:	0.11.0
 Release:	1
 License:	BSD or CC-BY-SA v3.0, CC v3.0, w3c (see LICENSE.README)
 Group:		X11/Libraries
 Source0:	http://downloads.sourceforge.net/oscaf/%{name}-%{version}.tar.bz2
-# Source0-md5:	bfb7b5acbb43e5e45466c87dbe9c45b7
+# Source0-md5:	db75d155ac9b60e3d187e23544744acc
 URL:		http://sourceforge.net/apps/trac/oscaf/
 # leave only required ones
 BuildRequires:	cmake >= 2.8.0
