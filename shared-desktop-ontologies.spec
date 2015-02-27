@@ -2,7 +2,7 @@ Summary:	Shared Desktop Ontologies
 Summary(pl.UTF-8):	Ontologia dla aplikacji desktopowych
 Name:		shared-desktop-ontologies
 Version:	0.11.0
-Release:	1
+Release:	2
 License:	BSD or CC-BY-SA v3.0, CC v3.0, w3c (see LICENSE.README)
 Group:		X11/Libraries
 Source0:	http://downloads.sourceforge.net/oscaf/%{name}-%{version}.tar.bz2
